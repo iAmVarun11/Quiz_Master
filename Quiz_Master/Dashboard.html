@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #e7e8fc;
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 70px;
+        width: auto;
+        border-radius: 15px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-info span {
+      font-weight: bold;
+    }
+
+    .user-info .logout {
+      color: red;
+      cursor: pointer;
+    }
+
+    .dashboard {
+      padding: 2rem;
+    }
+
+    .dashboard h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .stat-box {
+      flex: 1;
+      background: white;
+      padding: 1rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-box img {
+      width: auto;
+      height: 70px;
+    border-radius: 15px;
+    }
+
+    .stat-box div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .stat-box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .subjects {
+      margin-top: 2rem;
+      background: linear-gradient(to right, #cdffd8, #94b9ff);
+      padding: 1rem;
+      border-radius: 15px;
+    }
+
+    .subjects h2 {
+      margin-bottom: 1rem;
+      color: #0072ff;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .subject-card button {
+      background: linear-gradient(to right, #8c52ff, #5CE1EC);
+      border: none;
+      padding: 1rem;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      height: auto;
+    }
+
+    .subject-card button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    nav a.active-page {
+  background: #e0ebff;
+  color: #3a4fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="image/Logo.jpg" alt="QuizMaster Logo" />
+      <h2 style="color:#3a4fff;">QuizMaster</h2>
+    </div>
+    <nav>
+    <a href="Dashboard.html" class="active-page">Dashboard</a>
+    <a href="result.html">Results</a>
+    </nav>
+    <div class="user-info">
+      <img src="image/UserLogo.jpg" width="auto" height="70" style="border-radius: 15px;" />
+      <span>UserName</span>
+      <span style="color: green">Student</span>
+      <span class="logout">[ > LogOut</span>
+    </div>
+  </header>
+
+  <div class="dashboard">
+    <h1>Welcome back, UserName!</h1>
+    <p>Ready to test your knowledge? Check out the available quizzes below.</p>
+
+    <div class="stats">
+      <div class="stat-box">
+        <div>
+          <h2>Available Quizzes</h2>
+          <p>0</p>
+        </div>
+        <img src="image/book.jpg" alt="Book" />
+      </div>
+      <div class="stat-box">
+        <div>
+          <h2>Completed</h2>
+          <p>0</p>
+        </div>
+        <img src="image/box.jpg" alt="Completed" />
+      </div>
+      <div class="stat-box">
+        <div>
+          <h2>Average Score</h2>
+          <p>0%</p>
+        </div>
+        <img src="image/trophy.jpg" alt="Score" />
+      </div>
+      <div class="stat-box">
+        <div>
+          <h2>This Week</h2>
+          <p>0</p>
+        </div>
+        <img src="image/arrow.jpg" alt="Weekly" />
+      </div>
+    </div>
+
+    <div class="subjects">
+      <h2>Subjects</h2>
+      <div class="subject-grid">
+        <div class="subject-card"><button>Mathematics</button></div>
+        <div class="subject-card"><button>Science</button></div>
+        <div class="subject-card"><button>Social Science</button></div>
+        <div class="subject-card"><button>English</button></div>
+        <div class="subject-card"><button>Hindi</button></div>
+        <div class="subject-card"><button>Computer Science</button></div>
+        <div class="subject-card"><button>General Knowledge</button></div>
+        <div class="subject-card"><button>Moral Science</button></div>
+        <div class="subject-card"><button>Environmental Studies</button></div>
+        <div class="subject-card"><button>Physical Education</button></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  window.onload = function () {
+    const email = localStorage.getItem("quizEmail");
+    if (email) {
+      document.querySelector(".user-info span").textContent = email;
+      document.querySelector(".dashboard h1").textContent = "Welcome back, " + email + "!";
+    }
+  };
+</script>
+<a class="logout" href="#" onclick="logout()">[ > LogOut</a>
+
+<script>
+  function logout() {
+    localStorage.removeItem("quizEmail");
+    localStorage.removeItem("quizPassword");
+    window.location.href = "login_page.html";
+  }
+</script>
+
+</html>

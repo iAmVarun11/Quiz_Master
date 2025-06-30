@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster - Student Information</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #eef0ff;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+    .logo span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3165ff;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info img {
+      width: 30px;
+      border-radius: 50%;
+    }
+    .user-info .role {
+      background: #eef5ff;
+      padding: 2px 8px;
+      border-radius: 8px;
+      color: #3165ff;
+      font-size: 14px;
+    }
+    .logout {
+      color: red;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+    }
+    .section-title {
+      background: linear-gradient(90deg, #d5c8ff, #c8eaff);
+      padding: 10px;
+      font-weight: bold;
+      color: #3165ff;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 150px 1fr 100px 1fr;
+      gap: 10px 15px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .form-grid label {
+      font-weight: bold;
+      color: #3165ff;
+      text-align: right;
+      padding-right: 5px;
+    }
+    .form-grid input {
+      padding: 8px;
+      border: none;
+      background: #fff;
+      box-shadow: 0 0 3px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+    .form-grid .full {
+      grid-column: span 3;
+    }
+    .photo-box {
+      width: 150px;
+      height: 150px;
+      background: #fff;
+      box-shadow: 0 0 3px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    .education-section {
+      display: grid;
+      grid-template-columns: 80px 150px 60px 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .subject-box {
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+    }
+    .subject-box label {
+      font-size: 18px; /* Bigger font */
+      color: #333;
+      padding: 5px 0;
+      cursor: pointer;
+    }
+    .add-button {
+      display: block;
+      margin: 30px auto 0 auto;
+      padding: 10px 30px;
+      background: linear-gradient(90deg, #3165ff, #a033ff);
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .add-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="image/Logo.jpg " alt="QuizMaster Logo" style="width: auto; height: 50px ;border-radius: 15px;">
+      <span>QuizMaster</span>
+    </div>
+    <div class="user-info">
+      <img src="image/UserLogo.jpg" width="auto" height="70px" style="border-radius: 15px;" />
+      <span>UserName</span>
+      <span class="role">Tutor</span>
+      <a href="#" class="logout">[ > LogOut</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-title">Student Information</div>
+    <div style="display: flex; gap: 20px;">
+      <div class="photo-box"></div>
+      <div style="flex: 1;">
+        <div class="form-grid">
+          <label>Student’s Name:</label>
+          <input type="text" />
+          <label>Age:</label>
+          <input type="number" />
+
+          <label>Parent/Guardian's Name:</label>
+          <input type="text" class="full" />
+
+          <label>City:</label>
+          <input type="text" />
+          <label>Email:</label>
+          <input type="email" />
+
+          <label>Phone no:</label>
+          <input type="text" class="full" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title" style="width: 150px;">Education</div>
+    <div class="education-section">
+      <label>Grade</label>
+      <input type="text" />
+      <label>Board</label>
+      <input type="text" />
+    </div>
+
+    <div class="section-title" style="width: 150px;">Subject</div>
+    <div class="subject-box">
+      <label><input type="checkbox" /> Mathematics</label>
+      <label><input type="checkbox" /> Science</label>
+      <label><input type="checkbox" /> Social Science</label>
+      <label><input type="checkbox" /> English</label>
+      <label><input type="checkbox" /> Hindi</label>
+      <label><input type="checkbox" /> Computer Science</label>
+      <label><input type="checkbox" /> General Knowledge</label>
+      <label><input type="checkbox" /> Moral Science</label>
+      <label><input type="checkbox" /> Environmental Studies</label>
+      <label><input type="checkbox" /> Physical Education</label>
+    </div>
+
+    <button class="add-button">Add Student</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | QuizMaster</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #e9e9fd;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container img {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .login-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .login-container p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 25px;
+      background: #f7f7fb;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background: linear-gradient(to right, #a18cd1, #00dbde);
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-container .links {
+      margin-top: 1rem;
+    }
+
+    .login-container .links a {
+      display: block;
+      margin: 0.3rem 0;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-container .signup {
+      color: #444;
+    }
+
+    .login-container .signup a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="image/Logo.jpg" alt="Logo" style="border-radius: 15px; width: auto; height: 70px;">
+    <h2>Welcome Back</h2>
+    <p>Sign in to your account</p>
+    <input type="email" id="email" placeholder="Enter Your Email" />
+    <input type="password" id="password" placeholder="Enter Your Password" />
+        <select id="role" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: none; border-radius: 25px; background: #f7f7fb; font-size: 1rem;">
+  <option value="" disabled selected>I am</option>
+  <option value="Student">Student</option>
+  <option value="Tutor">Tutor</option>
+</select>
+
+  <button onclick="saveLogin()">Sign in ></button>
+
+    <div class="links">
+      <a href="#">Forgot Your Password?</a>
+    </div>
+    <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
+</body>
+<script>
+  function saveLogin() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (email && password) {
+      localStorage.setItem("quizEmail", email);
+      localStorage.setItem("quizPassword", password); // Don't do this in real apps
+      alert("Login saved! Redirecting to Dashboard...");
+      window.location.href = "Dashboard.html";
+    } else {
+      alert("Please enter both email and password.");
+    }
+  }
+  function saveLogin() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const role = document.getElementById("role").value;
+
+    if (email && password && role) {
+      localStorage.setItem("quizEmail", email);
+      localStorage.setItem("quizPassword", password); // For demo only
+      localStorage.setItem("quizRole", role);
+
+      if (role === "Student") {
+        alert("Login successful as Student! Redirecting to Student Dashboard...");
+        window.location.href = "Dashboard.html";
+      } else if (role === "Tutor") {
+        alert("Login successful as Tutor! Redirecting to Tutor Dashboard...");
+        window.location.href = "TutorDashboard.html";
+      }
+    } else {
+      alert("Please fill in email, password and select your role.");
+    }
+  }
+</script>
+
+</html>
